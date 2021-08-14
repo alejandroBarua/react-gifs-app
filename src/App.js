@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import AddCategory from './components/AddCategory';
+
+const App = ({ title }) => {
+
+	const [categories, setCategories] = useState(['One Punch', 'Samurai X']);
+
+	//const handleAdd = () => setCategories(['Dragon Ball', ...categories]);
+	
+	return (
+
+		<> 
+			<h1>{title}</h1>
+
+			<AddCategory 
+				setCategories={setCategories} 
+			/>
+
+			<hr />
+			{/* <button onClick={handleAdd}>Add</button> */}
+
+			<ol>
+				{
+					categories.map(category => <li key={category}>{category}</li>)
+				}
+			</ol>
+		</>
+
+	);
+} 
+
+App.propTypes = {
+	title: PropTypes.string.isRequired 
 }
 
-export default App;
+
+export default App; 
