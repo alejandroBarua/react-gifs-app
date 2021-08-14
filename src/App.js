@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import AddCategory from './components/AddCategory';
+import GifGrid from './components/GifGrid';
 
 const App = ({ title }) => {
 
-	const [categories, setCategories] = useState(['One Punch', 'Samurai X']);
+	const [categories, setCategories] = useState(['Rick and Morty', 'Game of Thrones']);
 
 	//const handleAdd = () => setCategories(['Dragon Ball', ...categories]);
 	
@@ -23,7 +24,7 @@ const App = ({ title }) => {
 
 			<ol>
 				{
-					categories.map(category => <li key={category}>{category}</li>)
+					categories.map(category => <GifGrid key={category} category={category} />)
 				}
 			</ol>
 		</>
