@@ -13,20 +13,23 @@ const App = ({ title }) => {
 	return (
 
 		<> 
-			<h1>{title}</h1>
+		<header>
+			<div class="container">
+				<h1>{title}</h1>
+				<AddCategory 
+					setCategories={setCategories} 
+				/>
+			</div>
 
-			<AddCategory 
-				setCategories={setCategories} 
-			/>
-
-			<hr />
+		</header>
 			{/* <button onClick={handleAdd}>Add</button> */}
-
-			<ol>
-				{
-					categories.map(category => <GifGrid key={category} category={category} />)
-				}
-			</ol>
+			<div class="container">
+				<ol>
+					{
+						categories.map(category => <GifGrid key={category} category={category} />)
+					}
+				</ol>
+			</div>
 		</>
 
 	);

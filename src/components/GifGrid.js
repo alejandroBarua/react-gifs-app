@@ -1,22 +1,18 @@
-import React, {useState, useEffect} from 'react'
-import { getGifs } from '../helpers/getGifs';
+import React from 'react';
+import useFetchGifs from '../hooks/useFetchGifs';
 import Gif from "./Gif";
 
 const GifGrid = ({category}) => {
 
-	//const [count, setCount] = useState(0); // esto es para probar el useEffect ya que con cada cambio el componente se renderiza por completo
-	const [images, setImages] = useState([]);
-
-	useEffect(() => {
-		getGifs(category)
-			.then(gifs => setImages(gifs));
-	},[category]) // solo se renderiza el componente cuando el valor de category cambie
-
+	const {data : images, loading} = useFetchGifs(category);
+	
 	return (
 		<>
-			<h2>{category}</h2>
-			{/* <h4>{count}</h4>
-			<button onClick={() => setCount(count + 1)}>add Count</button> */}
+			<h2 className="title-category">{category}</h2>
+
+			{loading && <h3 className="animate__animated animate__flash">Loading...</h3> } 
+			{/* // loading ? <h3>Loading...</h3> : null */}
+
 			<div className="card-grid">
 				{
 					images.map(({id, ...image}) => <Gif key={id} {...image} />)

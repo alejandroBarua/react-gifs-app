@@ -17,10 +17,9 @@ const AddCategory = ({setCategories}) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-		<p>{inputValue}</p>
 			<input 
 				type="text" 
-				placeholder="Category"
+				placeholder="Search Gifs..."
 				value={inputValue}
 				onChange={handleInputValue}
 			/>
