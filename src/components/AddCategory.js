@@ -9,6 +9,7 @@ const AddCategory = ({setCategories}) => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+
 		if(inputValue.trim().length > 2){
 			setCategories(categories => [inputValue, ...categories]);
 			setInputValue('');
@@ -17,6 +18,7 @@ const AddCategory = ({setCategories}) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+			<p>{inputValue}</p>
 			<input 
 				type="text" 
 				placeholder="Search Gifs..."
