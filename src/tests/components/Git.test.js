@@ -7,8 +7,6 @@ describe('tests <Gif />', () => {
 	const title = "Hello World",
 		url ="htpp://localhost:8080/",
 		wrapper = shallow(<Gif title={title} url={url}/>);
-
-		
 		
 		test('render Component', () => {
 
