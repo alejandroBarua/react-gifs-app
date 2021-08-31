@@ -6,7 +6,7 @@ import GifGrid from './components/GifGrid';
 
 const App = ({ title }) => {
 
-	const [categories, setCategories] = useState(['Rick and Morty', 'Game of Thrones']);
+	const [categories, setCategories] = useState(['Rick and Morty']);
 
 	//const handleAdd = () => setCategories(['Dragon Ball', ...categories]);
 	

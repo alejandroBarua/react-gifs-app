@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component render component 1`] = `
+<Fragment>
+  <header>
+    <div
+      class="container"
+    >
+      <h1>
+        Hello World
+      </h1>
+      <AddCategory
+        setCategories={[Function]}
+      />
+    </div>
+  </header>
+  <div
+    class="container"
+  >
+    <ol>
+      <GifGrid
+        category="Rick and Morty"
+        key="Rick and Morty"
+      />
+    </ol>
+  </div>
+</Fragment>
+`;
