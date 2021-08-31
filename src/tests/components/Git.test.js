@@ -15,7 +15,7 @@ describe('tests <Gif />', () => {
 			expect(wrapper).toMatchSnapshot();
 	})
 	
-	test('test title', () => {
+	test('title', () => {
 		
 		const titleShort = title.slice(0,25) + "...";
 		const $p = wrapper.find('p');
@@ -23,7 +23,7 @@ describe('tests <Gif />', () => {
 		expect($p.text().trim()).toBe(titleShort);
 	})
 
-	test('test img', () => {
+	test('img', () => {
 		
 		const $img = wrapper.find('img');
 
@@ -36,7 +36,7 @@ describe('tests <Gif />', () => {
 
 	})
 
-	test('test div', () => {
+	test('div', () => {
 		
 		const $div = wrapper.find('div'),
 			className = $div.prop('className');
